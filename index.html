@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Rapzzxd</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a2a, #1a1a4a);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #4a9eff;
+            text-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4a9eff;
+            box-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
+            margin: 20px auto;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(74, 158, 255, 0.2),
+                rgba(74, 158, 255, 0)
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(45deg) translate(-30%, -30%); }
+            100% { transform: rotate(45deg) translate(30%, 30%); }
+        }
+        
+        .info-text {
+            margin: 20px 0;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+        
+        .payment-method {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .payment-method h2 {
+            color: #4a9eff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .payment-detail {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        
+        .qris-image {
+            max-width: 200px;
+            border-radius: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 2px solid #4a9eff;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #4a9eff, #0066ff);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 158, 255, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .hd-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .music-player {
+            margin: 30px auto;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Selamat Datang Di Website Payment <span class="hd-badge">HD 3D</span></h1>
+            <p class="info-text">RapzzxdStr, Pembayaran Digital</p>
+            <p class="info-text">Setelah Transfer Mohon Kirimkan Bukti Transfer</p>
+        </div>
+        
+        <img src="https://files.catbox.moe/kbtu8q.jpg" alt="Logo Rapzzxd" class="logo">
+        
+        <div class="payment-method">
+            <h2><span class="hd-badge">DANA</span></h2>
+            <p class="payment-detail">087864252521</p>
+            <button class="btn">Salin Nomor</button>
+        </div>
+        
+        <div class="payment-method">
+            <h2><span class="hd-badge">GOPAY</span></h2>
+            <p class="payment-detail">SCAN QRIS!!</p>
+            <img src="https://files.catbox.moe/nk7axp.jpg" alt="QRIS Code" class="qris-image">
+            <button class="btn">Buka QRIS</button>
+        </div>
+        
+        <div class="music-player">
+            <audio controls class="btn">
+                <source src="https://files.catbox.moe/imfw4d.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p class="hd-badge">Play Musik</p>
+        </div>
+        
+        <div class="footer">
+            © 2023 RapzzxdStr Payment | All Rights Reserved
+        </div>
+    </div>
+    
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        const starCount = 100;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random size between 1px and 3px
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Random position
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation duration between 2s and 5s
+            const duration = Math.random() * 3 + 2;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            // Random delay
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Copy to clipboard function
+        document.querySelectorAll('.btn').forEach(button => {
+            if (button.textContent === 'Salin Nomor') {
+                button.addEventListener('click', () => {
+                    const textToCopy = '087864252521';
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        button.textContent = 'Tersalin!';
+                        setTimeout(() => {
+                            button.textContent = 'Salin Nomor';
+                        }, 2000);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
